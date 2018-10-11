@@ -1,8 +1,11 @@
 apply plugin: 'com.android.library'
+
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+version = "1.0.2"   // #修改# // 这里是aar的版本号
 
-version = "1.0.1"   // #修改# // 这里是aar的版本号
+
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 27
@@ -30,8 +33,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//
+//    lintOptions{
+//        abortOnError false
+//    }
 
 }
+//
+//publish {
+//    repoName='Folder'
+//    userOrg = 'zhangshuai'      // bintray注册的用户名
+//    groupId = 'com.lib.folder.main'
+//    artifactId = 'com.zhang'// bintray创建的package
+//    publishVersion = '1.0.2'
+//    desc='Update this demo'
+//    website='https://github.com/TooCareAboutYOU/folder'
+//}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -48,9 +66,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-def siteUrl = 'https://github.com/saiwu-bigkoo/Android-PickerView'                        // #修改# // 项目的主页地址，我这里是我的PickerView项目在github的链接地址
-def gitUrl = 'https://github.com/saiwu-bigkoo/Android-PickerView.git'                     // #修改# // 项目 git 地址，我这里同样是用Github上的git地址
-group = "com.bigkoo"             // #修改# // 组名称，这个相当于依赖的时候 compile 'com.bigkoo:pickerview:1.0.1' “:”号前面的前缀
+// #修改# // 项目的主页地址，我这里是我的PickerView项目在github的链接地址
+def siteUrl = 'https://github.com/TooCareAboutYOU/folder'
+// #修改# // 项目 git 地址，我这里同样是用Github上的git地址
+def gitUrl = 'https://github.com/TooCareAboutYOU/folder.git'
+// #修改# // 组名称，这个相当于依赖的时候 compile 'com.bigkoo:pickerview:1.0.1' “:”号前面的前缀
+group = "com.zhang"
 
 install {
     repositories.mavenInstaller {
@@ -58,7 +79,7 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'PickerView For Android'                                   // #修改# // 标题
+                name 'Folder For Test'                                   // #修改# // 标题
                 url siteUrl
                 // Set your license
                 licenses {
@@ -69,9 +90,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'sai'                                           // #修改# // 你的userid，昵称
-                        name 'sai.wu'                                       // #修改# // 用户名
-                        email 'sai.wu@bigkoo.com'                               // #修改# // 邮箱
+                        id 'dean'                                           // #修改# // 你的userid，昵称
+                        name 'dang.zhang'                                       // #修改# // 用户名
+                        email '1175133706@qq.com'                               // #修改# // 邮箱
                     }
                 }
                 scm {
@@ -107,16 +128,18 @@ artifacts {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    user = properties.getProperty('bintray.user')
+    key =  properties.getProperty('bintray.apikey')
     // 上面两个 user和key 需要留意一下，在local.properites 里面配置的
     configurations = ['archives']
     pkg {
-        repo = "maven"
-        name = "PickerView"                                                 // #修改# //  在 jcenter 上面的项目名字
+        repo = 'Folder'
+        name = 'lib-folder'
+        userOrg = 'zhangshuai'      // bintray注册的用户名// #修改# //  在 jcenter 上面的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
+        licenses = ['Apache-2.0']
         publish = true
+        publicDownloadNumbers = true
     }
 }

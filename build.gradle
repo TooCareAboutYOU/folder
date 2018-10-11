@@ -18,6 +18,7 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+//        classpath 'com.novoda:bintray-release:0.4.0'
     }
 }
 
@@ -26,10 +27,22 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        maven{url"https://jitpack.io"}
+        maven{url"https://jitpack.io"} // ;"https://dl.bintray.com/zhangshuai/Folder"
     }
+    //   如果有中文注释加入如下代码
+    //方式一
+//    tasks.withType(Javadoc) {
+//        options{ encoding "UTF-8"
+//            charSet 'UTF-8'
+//            links "http://docs.oracle.com/javase/7/docs/api"
+//        }
+//    }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+// 方式二 指定javadoc UTF-8格式
+//task javadoc(type: Javadoc) {
+//    options.encoding = "utf-8"
+//}
