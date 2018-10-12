@@ -9,9 +9,6 @@ version = "1.0.2"   // #修改# // 这里是aar的版本号
 
 android {
     compileSdkVersion 27
-
-
-
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 27
