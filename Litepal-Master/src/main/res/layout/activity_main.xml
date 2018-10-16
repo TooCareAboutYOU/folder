@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_Insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ClickMethod"
+        android:text="添加" />
+
+    <Button
+        android:id="@+id/btn_Select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ClickMethod"
+        android:text="查询" />
+
+
+    <Button
+        android:id="@+id/btn_AsyncSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ClickMethod"
+        android:text="查询异步" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/acEt_BookId"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入书编号"/>
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/acEt_BookName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入书名"/>
+    <Button
+        android:id="@+id/btn_Update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ClickMethod"
+        android:text="修改" />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/acEt_BookId_delete"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入书编号"/>
+    <Button
+        android:id="@+id/btn_Delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ClickMethod"
+        android:text="删除" />
+
+</android.support.v7.widget.LinearLayoutCompat>

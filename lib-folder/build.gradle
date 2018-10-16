@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
-version = "1.0.2"   // #修改# // 这里是aar的版本号
+version = "1.0.0"   // #修改# // 这里是aar的版本号
 
 
 //apply plugin: 'com.novoda.bintray-release'
@@ -25,8 +25,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -130,8 +134,8 @@ bintray {
     // 上面两个 user和key 需要留意一下，在local.properites 里面配置的
     configurations = ['archives']
     pkg {
-        repo = 'Folder'
-        name = 'lib-folder'
+        repo = 'Folder'    //bintray仓库名
+        name = 'lib-folder'   //依赖项目名
         userOrg = 'zhangshuai'      // bintray注册的用户名// #修改# //  在 jcenter 上面的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
@@ -140,3 +144,4 @@ bintray {
         publicDownloadNumbers = true
     }
 }
+

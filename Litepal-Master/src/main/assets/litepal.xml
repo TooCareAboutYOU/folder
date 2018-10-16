@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <litepal>
+        <dbname value="First_LitePal"/>
+        <version value="1"/>
+        <list>
+            <mapping class="com.litepal.main.beans.Book"/>
+        </list>
+    </litepal>
+
+</resources>

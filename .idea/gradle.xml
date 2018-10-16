@@ -8,6 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ActiveAndroid-Master" />
+            <option value="$PROJECT_DIR$/LIfecycle-Master" />
+            <option value="$PROJECT_DIR$/Litepal-Master" />
+            <option value="$PROJECT_DIR$/Paging-Master" />
+            <option value="$PROJECT_DIR$/RoomData-Master" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/lib-folder" />
           </set>

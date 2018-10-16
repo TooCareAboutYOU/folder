@@ -1,12 +1,22 @@
 package com.cmake.main.myapplication;
 
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.lib.folder.main.TestToast;
 
+import com.cmake.main.myapplication.works.HttpWork;
+
+import java.util.concurrent.TimeUnit;
+
+import androidx.work.Constraints;
+import androidx.work.Data;
+import androidx.work.NetworkType;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 import cn.hugeterry.updatefun.UpdateFunGO;
 import cn.hugeterry.updatefun.config.UpdateKey;
 
@@ -36,7 +46,36 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
             case R.id.btn_Test:{
-                Toast.makeText(this, "Test Demo 二", Toast.LENGTH_SHORT).show();
+                //约束条件
+                if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.M) {
+                    Toast.makeText(this, "触发了", Toast.LENGTH_SHORT).show();
+                    Constraints constraints=new Constraints.Builder()
+                            .setRequiredNetworkType(NetworkType.CONNECTED)
+//                            .setRequiresBatteryNotLow(true) //不在电量不足时执行
+//                            .setRequiresCharging(true) // 在充电时执行
+//                            .setRequiresStorageNotLow(true) //不在存储容量不足时执行
+//                            .setRequiresDeviceIdle(true)  //在待机状态执行
+                            .build();
+                    //传入参数
+                    Data data=new Data.Builder().putString("demo","Hello World").build();
+                    //构造work
+                    OneTimeWorkRequest httpWork=new OneTimeWorkRequest.Builder(HttpWork.class).setConstraints(constraints).setInputData(data).build();
+
+                    //周期任务
+                    PeriodicWorkRequest periodicWorkRequest=new PeriodicWorkRequest
+                            .Builder(HttpWork.class,15, TimeUnit.SECONDS)
+                            .setConstraints(constraints)
+                            .setInputData(data)
+                            .build();
+
+                    //任务链
+
+
+                    //放入执行队列
+                    WorkManager.getInstance().beginWith(httpWork).enqueue();
+                }
+
+
                 break;
             }
         }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_Add"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:onClick="ClickMethod"
+        android:text="添加数据"/>
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/acEt_Conditions_Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入查询ID"/>
+    <Button
+        android:id="@+id/btn_Search"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:onClick="ClickMethod"
+        android:text="查询数据"/>
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/acEt_Conditions_Delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入删除ID"/>
+    <Button
+        android:id="@+id/btn_Delete"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:onClick="ClickMethod"
+        android:text="删除数据"/>
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/acEt_Conditions_Update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入更新ID"/>
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/acEt_Conditions_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入更新名字"/>
+    <Button
+        android:id="@+id/btn_Update"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:onClick="ClickMethod"
+        android:text="更新数据"/>
+
+
+
+
+</android.support.v7.widget.LinearLayoutCompat>
