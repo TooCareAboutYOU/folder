@@ -29,11 +29,12 @@ public class MainActivity extends AppCompatActivity implements IObservable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mEtJobId=findViewById(R.id.AcEt_JobId);
+        Operation.init();
     }
 
     @Override
     public void update() {
-
+        Toast.makeText(this, "更新数据", Toast.LENGTH_SHORT).show();
     }
 
     @Override

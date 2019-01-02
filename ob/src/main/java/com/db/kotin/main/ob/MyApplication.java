@@ -22,7 +22,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sApplication=this;
-        Operation.init();
     }
 
     public static synchronized MyApplication getApplication(){ return sApplication;}

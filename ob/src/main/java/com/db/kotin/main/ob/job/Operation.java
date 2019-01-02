@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.db.kotin.main.ob.MyApplication;
+import com.db.kotin.main.ob.observable.DateWatcher;
 import com.evernote.android.job.JobManager;
 import com.evernote.android.job.JobRequest;
 
@@ -50,13 +51,16 @@ public class Operation {
         sCDTimerHash = new HashMap<>();
     }
 
-    // 设置执行此任务需满足的条件、间隔时间和关机重启后是否继续执行
-    public void startScheduleJob(String tag) {
-
+    private void Judge(){
         if (mJobManager == null) {
             throw new NullPointerException("the Job is not initialize");
         }
+    }
 
+
+    // 设置执行此任务需满足的条件、间隔时间和关机重启后是否继续执行
+    public void startScheduleJob(String tag) {
+        Judge();
         int jobId = new JobRequest.Builder(tag)
                 .setRequiredNetworkType(JobRequest.NetworkType.CONNECTED)
                 .setRequiresDeviceIdle(true)
@@ -75,6 +79,7 @@ public class Operation {
 
             @Override
             public void onFinish() {
+                DateWatcher.getInstance().notifyObservable();
                 remove(jobId);
             }
         }.start();
@@ -83,16 +88,18 @@ public class Operation {
     }
 
     public void cancel(int jobId) {
+        Judge();
         remove(jobId);
     }
 
     public void cancelAll(boolean isExit) {
+        Judge();
         if (mJobManager != null) {
+            Log.i(MySyncJob.TAG, "Operation cancel all");
+            mJobManager.cancelAll();
             if (isExit) {
                 mJobManager = null;
             }
-            Log.i(MySyncJob.TAG, "Operation cancel all");
-            mJobManager.cancelAll();
             clearTimers();
         }
     }

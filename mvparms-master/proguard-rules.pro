@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+##
+#---------------------------retrolambda-----------------------------
+##
+-dontwarn java.lang.invoke.*
+
+#---------------------------blankj:utilcode-----------------------------
+# 使用前请先初始化： Utils.init(application);
+-keep class com.blankj.utilcode.** { *; }
+-keepclassmembers class com.blankj.utilcode.** { *; }
+-dontwarn com.blankj.utilcode.**

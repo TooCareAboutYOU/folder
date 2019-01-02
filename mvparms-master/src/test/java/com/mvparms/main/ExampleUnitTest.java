@@ -1,4 +1,4 @@
-package com.paging.main;
+package com.mvparms.main;
 
 import org.junit.Test;
 
