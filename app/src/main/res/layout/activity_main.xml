@@ -32,4 +32,32 @@
         android:text="测试"
         android:onClick="ClickMethod"/>
 
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <Button
+            android:id="@+id/btn_Add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加key"
+            android:onClick="ClickMethod"/>
+        <Button
+            android:id="@+id/btn_Remove"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="移除key"
+            android:onClick="ClickMethod"/>
+        <Button
+            android:id="@+id/btn_Check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="检验是否存在key"
+            android:onClick="ClickMethod"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
 </android.support.v7.widget.LinearLayoutCompat>

@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 //大量的数据插入时，用事务
                 ActiveAndroid.beginTransaction();
                 try {
-                    for (int i = 0; i < 10; i++) {
-                        int id = new Random().nextInt(1000);
+                    for (int i = 1; i < 11; i++) {
+                        int id = i; //new Random().nextInt(10);
                         Log.i(TAG, "用户ID: " + id);
                         From from = new Select().from(Category.class).where("userId=?", id);
                         if (!from.exists()) {
@@ -96,11 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 printAllData();
-
-                List<Item> execute=new Select().from(Item.class).execute();
-                for (int i = 0; i < execute.size(); i++) {
-                    Log.e(TAG, "打印信息: "+execute.get(i).toString());
-                }
 
                 break;
             }

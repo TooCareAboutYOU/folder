@@ -20,36 +20,36 @@ public class MainPresenter implements IPresenter {
 
     @Override
     public void onCreate(LifecycleOwner owner) {
-        Log.i(TAG, "MainPresenter.onCreate: "+this.getClass().toString());
+        Log.i(TAG, ".onCreate: ");
     }
 
     @Override
     public void onStart(LifecycleOwner owner) {
-        Log.i(TAG, "MainPresenter.onStart: "+this.getClass().toString());
+        Log.i(TAG, ".onStart: ");
     }
 
     @Override
     public void onResume(LifecycleOwner owner) {
-        Log.i(TAG, "MainPresenter.onResume: "+this.getClass().toString());
+        Log.i(TAG, ".onResume: ");
     }
 
     @Override
     public void onPause(LifecycleOwner owner) {
-        Log.i(TAG, "MainPresenter.onPause: "+this.getClass().toString());
+        Log.i(TAG, ".onPause: ");
     }
 
     @Override
     public void onStop(LifecycleOwner owner) {
-        Log.i(TAG, "MainPresenter.onStop: "+this.getClass().toString());
+        Log.i(TAG, ".onStop: ");
     }
 
     @Override
     public void onDestroy(LifecycleOwner owner) {
-        Log.i(TAG, "MainPresenter.onDestroy: "+this.getClass().toString());
+        Log.i(TAG, ".onDestroy: ");
     }
 
     @Override
     public void onLifeCycleChanged(LifecycleOwner owner, Lifecycle.Event event) {
-        Log.i(TAG, "onLifeCycleChanged: "+this.getClass().toString());
+        Log.i(TAG, "onLifeCycleChanged: ");
     }
 }

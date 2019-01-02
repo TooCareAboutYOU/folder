@@ -1,8 +1,11 @@
 package com.cmake.main.myapplication;
 
+import android.content.SharedPreferences;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,6 +24,8 @@ import cn.hugeterry.updatefun.UpdateFunGO;
 import cn.hugeterry.updatefun.config.UpdateKey;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String key="keys";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 UpdateFunGO.showDownloadView(this);
                 break;
             }
-            case R.id.btn_Test:{
+            case R.id.btn_Test:
                 //约束条件
                 if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.M) {
                     Toast.makeText(this, "触发了", Toast.LENGTH_SHORT).show();
@@ -73,9 +78,31 @@ public class MainActivity extends AppCompatActivity {
 
                     //放入执行队列
                     WorkManager.getInstance().beginWith(httpWork).enqueue();
+
+                break;
+            }
+
+            case R.id.btn_Add:{
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(key, "哈哈");
+                editor.commit();
+                break;
+            }
+            case R.id.btn_Remove:{
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.remove(key);
+                editor.commit();
+                break;
+            }
+            case R.id.btn_Check:{
+                if (!TextUtils.isEmpty(key)) {
+//                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//                    Toast.makeText(this, "状态:" + sharedPreferences.contains(key), Toast.LENGTH_SHORT).show();
+                    String msg=PreferenceManager.getDefaultSharedPreferences(this).getString(key, "");
+                    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
                 }
-
-
                 break;
             }
         }

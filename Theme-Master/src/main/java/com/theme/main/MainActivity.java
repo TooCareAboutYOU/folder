@@ -18,6 +18,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.res.AssetManager;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -97,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         AppWidgetManager storageStatsManager = (AppWidgetManager) this.getSystemService(Context.APPWIDGET_SERVICE);
+        AssetManager assetManager=getAssets();
+
 
     }
 

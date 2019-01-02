@@ -16,6 +16,9 @@
             <option value="$PROJECT_DIR$/Theme-Master" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/lib-folder" />
+            <option value="$PROJECT_DIR$/lib-reactivenet" />
+            <option value="$PROJECT_DIR$/ob" />
+            <option value="$PROJECT_DIR$/springanimation-master" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
