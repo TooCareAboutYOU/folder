@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <variable name="user" type="com.rx.main.UserBean"/>
+        <variable name="presenter" type="com.rx.main.DataBindingActivity.Presenter"/>
+        <variable name="formBean" type="com.rx.main.FormBean"/>
+    </data>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.firstName}"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.lastName}"/>
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change_Data"
+                android:onClick="@{()->presenter.onClickListenerBinding(user)}"/>
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+        <!--android:onTextChanged="@{presenter.onTextChanged}"-->
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="editView的onTextChanged调用"
+            android:onTextChanged="@{presenter.onTextChanged}"
+            />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={formBean.account}"/>
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={formBean.password}"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change_Data"
+            android:onClick="@{()->presenter.onClickListenerBinding(formBean)}"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</layout>
