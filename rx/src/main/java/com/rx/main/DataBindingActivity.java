@@ -36,10 +36,10 @@ public class DataBindingActivity extends AppCompatActivity {
             @Override
             public void onPropertyChanged(Observable sender, int propertyId) {
                 switch (propertyId) {
-                    case BR.account:
+                    case com.rx.main.BR.account:
                         Toast.makeText(DataBindingActivity.this, "账号改变", Toast.LENGTH_SHORT).show();
                         break;
-                    case BR.password:
+                    case com.rx.main.BR.password:
                         Toast.makeText(DataBindingActivity.this, "密码改变", Toast.LENGTH_SHORT).show();
                         break;
                 }

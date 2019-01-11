@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.databinding.main.viewmodels.RecyclerViewBean"/>
+    </data>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/acTv_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="NULL"
+            android:textColor="@color/colorAccent"
+            android:text="@{bean.id}"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/acTv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="NULL"
+            android:textColor="@color/colorPrimary"
+            android:text="@{bean.name}"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/acTv_blog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="NULL"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@{bean.blog}"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</layout>

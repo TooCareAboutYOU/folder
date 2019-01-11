@@ -14,12 +14,14 @@
             <option value="$PROJECT_DIR$/RoomData-Master" />
             <option value="$PROJECT_DIR$/SystemService-Master" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/databinding-master" />
             <option value="$PROJECT_DIR$/lib-folder" />
             <option value="$PROJECT_DIR$/lib-reactivenet" />
             <option value="$PROJECT_DIR$/mvparms-master" />
             <option value="$PROJECT_DIR$/ob" />
             <option value="$PROJECT_DIR$/rx" />
             <option value="$PROJECT_DIR$/springanimation-master" />
+            <option value="$PROJECT_DIR$/workmanager-master" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
