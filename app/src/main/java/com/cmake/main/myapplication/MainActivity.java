@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 
 import com.cmake.main.myapplication.works.HttpWork;
+import com.reactivenet.main.ReactiveNetHelper;
 
 import java.util.concurrent.TimeUnit;
 
@@ -41,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void ClickMethod(View view) {
         switch (view.getId()) {
+            case R.id.btn_CheckNetWork:{
+                ReactiveNetHelper.connectActivity(this);
+                break;
+            }
             case R.id.btn_Touch:{
                 UpdateFunGO.manualStart(this);
                 break;
@@ -50,21 +55,30 @@ public class MainActivity extends AppCompatActivity {
                 UpdateFunGO.showDownloadView(this);
                 break;
             }
+
             case R.id.btn_Test:
                 //约束条件
                 if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.M) {
                     Toast.makeText(this, "触发了", Toast.LENGTH_SHORT).show();
                     Constraints constraints=new Constraints.Builder()
                             .setRequiredNetworkType(NetworkType.CONNECTED)
-//                            .setRequiresBatteryNotLow(true) //不在电量不足时执行
-//                            .setRequiresCharging(true) // 在充电时执行
-//                            .setRequiresStorageNotLow(true) //不在存储容量不足时执行
-//                            .setRequiresDeviceIdle(true)  //在待机状态执行
+                            .setRequiresBatteryNotLow(true) //不在电量不足时执行
+                            .setRequiresCharging(true) // 在充电时执行
+                            .setRequiresStorageNotLow(true) //不在存储容量不足时执行
+                            .setRequiresDeviceIdle(true)  //在待机状态执行
                             .build();
                     //传入参数
                     Data data=new Data.Builder().putString("demo","Hello World").build();
                     //构造work
-                    OneTimeWorkRequest httpWork=new OneTimeWorkRequest.Builder(HttpWork.class).setConstraints(constraints).setInputData(data).build();
+                    OneTimeWorkRequest httpWork=new OneTimeWorkRequest
+                            .Builder(HttpWork.class)
+                            .setConstraints(constraints)
+                            .setInputData(data)
+                            .build();
+
+                    //任务链
+                    //放入执行队列
+                    WorkManager.getInstance().beginWith(httpWork).enqueue();
 
                     //周期任务
                     PeriodicWorkRequest periodicWorkRequest=new PeriodicWorkRequest
@@ -72,36 +86,31 @@ public class MainActivity extends AppCompatActivity {
                             .setConstraints(constraints)
                             .setInputData(data)
                             .build();
-
-                    //任务链
-
-
-                    //放入执行队列
-                    WorkManager.getInstance().beginWith(httpWork).enqueue();
-
                 break;
             }
+
 
             case R.id.btn_Add:{
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(key, "哈哈");
-                editor.commit();
+                editor.apply();
+                Toast.makeText(this, "添加成功", Toast.LENGTH_SHORT).show();
                 break;
             }
             case R.id.btn_Remove:{
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.remove(key);
-                editor.commit();
+                editor.remove(key);
+                editor.apply();
+                Toast.makeText(this, "删除成功", Toast.LENGTH_SHORT).show();
                 break;
             }
             case R.id.btn_Check:{
                 if (!TextUtils.isEmpty(key)) {
-//                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//                    Toast.makeText(this, "状态:" + sharedPreferences.contains(key), Toast.LENGTH_SHORT).show();
-                    String msg=PreferenceManager.getDefaultSharedPreferences(this).getString(key, "");
-                    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                    String msg=sharedPreferences.getString(key, "");
+                    Toast.makeText(this,"是否存在key："+sharedPreferences.contains(key)+"\t\t"+ msg, Toast.LENGTH_SHORT).show();
                 }
                 break;
             }

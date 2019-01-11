@@ -3,6 +3,9 @@ package com.cmake.main.myapplication.works;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.cmake.main.myapplication.FirImApplication;
 
 import androidx.work.ListenableWorker;
 import androidx.work.Worker;
@@ -23,7 +26,7 @@ public class HttpWork extends Worker {
     @Override
     public Result doWork() {
         String str=this.getInputData().getString("demo");
-        Log.i(TAG, "doWork: "+str);
+        Log.w(TAG, Thread.currentThread()+"\t\t传值: "+str);
         return Result.SUCCESS;
     }
 }

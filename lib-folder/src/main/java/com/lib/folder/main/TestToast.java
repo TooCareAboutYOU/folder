@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 /**
- * Code of ZHANG/ 2018/10/11
+ * 用于第三方 bintray 应用内更新jar包
  */
 public class TestToast {
 
