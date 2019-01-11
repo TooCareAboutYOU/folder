@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_Insert:{
                 Book book=new Book(new Random().nextInt(1000),"当前时间"+System.currentTimeMillis());
                 if (book.save()) {
-//                    Toast.makeText(this, "添加成功😁", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "添加成功😁", Toast.LENGTH_SHORT).show();
                 }else {
-//                    Toast.makeText(this, "添加失败😭", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "添加失败😭", Toast.LENGTH_SHORT).show();
                 }
                 break;
             }
@@ -111,7 +111,11 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
                     for (Book book : bookList) {
-                        Operator.delete(Book.class,book.key());
+//                        Operator.delete(Book.class,book.key());
+                        if (book.isSaved()) {
+                            Log.w(TAG, "删除: "+book.delete());
+                        }
+
                     }
 
                     List<Book> bookLists=Operator.where("bookId=?",bookId.getText().toString().trim()).find(Book.class);
@@ -123,7 +127,11 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     Toast.makeText(this, "书编号不能为空!", Toast.LENGTH_SHORT).show();
                 }
+                break;
+            }
 
+            case R.id.btn_Clear:{
+                Operator.deleteAll(Book.class,"");
                 break;
             }
         }

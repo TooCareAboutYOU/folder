@@ -41,6 +41,8 @@ public class Book extends LitePalSupport {
     }
 
 
+
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("{");

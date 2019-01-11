@@ -10,17 +10,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements IActivity{
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//    }
-//
-//    public void MethodClick(View view) {
-//        setContentView(R.layout.sctivity_main2);
-//    }
-//
-
     @Override
     public int initView() {
         return R.layout.activity_main;
@@ -45,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements IActivity{
 
     public void ClickListeners(View view) {
         switch (view.getId()) {
-            case R.id.acBtn_img:{
+            case R.id.acTv_ViewStub:{
                 loadView();
                 break;
             }

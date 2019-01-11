@@ -117,6 +117,7 @@ public class Operation {
         }
     }
 
+    //清空多个会崩溃
     private static void clearTimers() {
         if (sCDTimerHash != null && sCDTimerHash.size() > 0) {
             for (Map.Entry<Integer, CountDownTimer> entry : sCDTimerHash.entrySet()) {

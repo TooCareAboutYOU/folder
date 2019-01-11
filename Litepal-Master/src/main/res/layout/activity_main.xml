@@ -63,4 +63,11 @@
         android:onClick="ClickMethod"
         android:text="删除" />
 
+    <Button
+        android:id="@+id/btn_Clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ClickMethod"
+        android:text="清空" />
+
 </android.support.v7.widget.LinearLayoutCompat>
