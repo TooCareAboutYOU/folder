@@ -1,1 +1,1 @@
-include ':app', ':lib-folder', ':RoomData-Master', ':LIfecycle-Master', ':ActiveAndroid-Master', ':Litepal-Master', ':SystemService-Master', ':ob', ':lib-reactivenet', ':springanimation-master', ':mvparms-master', ':rx', ':workmanager-master', ':databinding-master'
+include ':app', ':lib-folder', ':RoomData-Master', ':LIfecycle-Master', ':ActiveAndroid-Master', ':Litepal-Master', ':SystemService-Master', ':ob', ':lib-reactivenet', ':springanimation-master', ':mvparms-master', ':rx', ':workmanager-master', ':databinding-master', ':dagger2-master'
