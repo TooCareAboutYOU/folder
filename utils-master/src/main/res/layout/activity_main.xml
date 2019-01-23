@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+
+        <variable
+            name="clickListener"
+            type="com.utils.main.MainActivity.MyClickListener" />
+
+        <variable
+            name="hideView"
+            type="boolean" />
+
+        <variable
+            name="imgUrl"
+            type="String" />
+
+        <variable
+            name="whatsUp"
+            type="com.utils.main.MainActivity.DataModel"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+            <EditText
+                android:id="@+id/et_whatsUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="@={whatsUp.whatsup}" />
+
+            <Button
+                android:id="@+id/btn_activity"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:onClick="@{view ->clickListener.clickEvent(view)}"
+                android:text="Activity相关" />
+
+            <Button
+                android:id="@+id/btn_app"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:onClick="@{view ->clickListener.clickEvent(view)}"
+                android:text="APP相关"
+                android:visibility="@{hideView ? View.GONE : View.VISIBLE }" />
+
+            <Button
+                android:id="@+id/btn_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:onClick="@{view ->clickListener.clickEvent(view)}"
+                android:text="Bar相关" />
+
+            <Button
+                android:id="@+id/btn_uninstallAPP"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:onClick="@{view->clickListener.clickEvent(view)}"
+                android:text="Intent相关"
+                />
+
+            <Button
+                android:id="@+id/btn_img"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:onClick="@{clickListener::clickEvent}"
+                android:text="DataBinding IMG相关" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/ic_launcher"
+                app:show="@{imgUrl}" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </ScrollView>
+</layout>
