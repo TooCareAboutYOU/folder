@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.android.support:support-dynamic-animation-25.3.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-dynamic-animation-25.3.0.aar/d711d3365e54284f49e42c998308a0dd/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-dynamic-animation-25.3.0.aar/d711d3365e54284f49e42c998308a0dd/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/application_cachedata/android-sdk-macosx/extras/android/m2repository/com/android/support/support-dynamic-animation/25.3.0/support-dynamic-animation-25.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

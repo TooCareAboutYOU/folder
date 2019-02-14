@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/acEt_SearchInfo"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:textSize="16sp"
+        android:hint="Please input information"/>
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/acTv_ShowInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"/>
+
+
+</android.support.v7.widget.LinearLayoutCompat>

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: android.arch.work:work-firebase-1.0.0-alpha10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/work-firebase-1.0.0-alpha10.aar/cd0fb3edcbbf0b186030a9d4f48c0755/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/work-firebase-1.0.0-alpha10.aar/cd0fb3edcbbf0b186030a9d4f48c0755/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/android.arch.work/work-firebase/1.0.0-alpha10/8f4d03c88a3dd3020a40683da1513a27ee17636a/work-firebase-1.0.0-alpha10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

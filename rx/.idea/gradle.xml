@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/.." />
+            <option value="$PROJECT_DIR$/../ActiveAndroid-Master" />
+            <option value="$PROJECT_DIR$/../LIfecycle-Master" />
+            <option value="$PROJECT_DIR$/../LifecycleComponents-Mater" />
+            <option value="$PROJECT_DIR$/../Litepal-Master" />
+            <option value="$PROJECT_DIR$/../RoomData-Master" />
+            <option value="$PROJECT_DIR$/../SystemService-Master" />
+            <option value="$PROJECT_DIR$/../app" />
+            <option value="$PROJECT_DIR$/../dagger2-master" />
+            <option value="$PROJECT_DIR$/../databinding-master" />
+            <option value="$PROJECT_DIR$/../lib-folder" />
+            <option value="$PROJECT_DIR$/../lib-reactivenet" />
+            <option value="$PROJECT_DIR$/../mvparms-master" />
+            <option value="$PROJECT_DIR$/../ob" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/../springanimation-master" />
+            <option value="$PROJECT_DIR$/../utils-master" />
+            <option value="$PROJECT_DIR$/../workmanager-master" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

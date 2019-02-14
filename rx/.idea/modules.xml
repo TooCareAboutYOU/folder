@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ActiveAndroid-Master/ActiveAndroid-Master.iml" filepath="$PROJECT_DIR$/../ActiveAndroid-Master/ActiveAndroid-Master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LIfecycle-Master/LIfecycle-Master.iml" filepath="$PROJECT_DIR$/../LIfecycle-Master/LIfecycle-Master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LifecycleComponents-Mater/LifecycleComponents-Mater.iml" filepath="$PROJECT_DIR$/../LifecycleComponents-Mater/LifecycleComponents-Mater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Litepal-Master/Litepal-Master.iml" filepath="$PROJECT_DIR$/../Litepal-Master/Litepal-Master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RoomData-Master/RoomData-Master.iml" filepath="$PROJECT_DIR$/../RoomData-Master/RoomData-Master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SystemService-Master/SystemService-Master.iml" filepath="$PROJECT_DIR$/../SystemService-Master/SystemService-Master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../app/app.iml" filepath="$PROJECT_DIR$/../app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dagger2-master/dagger2-master.iml" filepath="$PROJECT_DIR$/../dagger2-master/dagger2-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../databinding-master/databinding-master.iml" filepath="$PROJECT_DIR$/../databinding-master/databinding-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../folder.iml" filepath="$PROJECT_DIR$/../folder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib-folder/lib-folder.iml" filepath="$PROJECT_DIR$/../lib-folder/lib-folder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lib-reactivenet/lib-reactivenet.iml" filepath="$PROJECT_DIR$/../lib-reactivenet/lib-reactivenet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mvparms-master/mvparms-master.iml" filepath="$PROJECT_DIR$/../mvparms-master/mvparms-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ob/ob.iml" filepath="$PROJECT_DIR$/../ob/ob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rx.iml" filepath="$PROJECT_DIR$/rx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../springanimation-master/springanimation-master.iml" filepath="$PROJECT_DIR$/../springanimation-master/springanimation-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../utils-master/utils-master.iml" filepath="$PROJECT_DIR$/../utils-master/utils-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../workmanager-master/workmanager-master.iml" filepath="$PROJECT_DIR$/../workmanager-master/workmanager-master.iml" />
+    </modules>
+  </component>
+</project>

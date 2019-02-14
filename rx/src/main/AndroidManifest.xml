@@ -19,9 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RxBindingActivity" />
-        <activity android:name=".DataBindingActivity" />
-        <activity android:name=".AnimationActivity"></activity>
+        <activity android:name=".RxBindingActivity" >
+
+        </activity>
+        <activity android:name=".DataBindingActivity" >
+
+        </activity>
+        <activity android:name=".AnimationActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -11,16 +11,20 @@
            android:layout_height="match_parent"
            android:orientation="vertical">
 
-           <android.support.v7.widget.AppCompatEditText
-               android:id="@+id/acEt_one"
+           <android.support.v7.widget.AppCompatButton
+               android:id="@+id/acBtn_one"
                android:layout_width="match_parent"
                android:layout_height="?android:attr/actionBarSize"
-               android:layout_marginBottom="16dp"/>
+               android:layout_marginBottom="16dp"
+               android:text="销毁Activity"
+               />
            <android.support.v7.widget.AppCompatEditText
                android:id="@+id/acEt_two"
                android:layout_width="match_parent"
                android:layout_height="?android:attr/actionBarSize"
-               android:layout_marginBottom="16dp"/>
+               android:layout_marginBottom="16dp"
+               android:hint="请输入。。。"
+               />
        </android.support.v7.widget.LinearLayoutCompat>
    </android.support.v7.widget.Toolbar>
 </android.support.v7.widget.LinearLayoutCompat>

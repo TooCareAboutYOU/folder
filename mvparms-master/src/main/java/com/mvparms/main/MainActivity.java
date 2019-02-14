@@ -3,6 +3,7 @@ package com.mvparms.main;
 import android.app.Application;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 import android.view.ViewStub;
@@ -20,17 +21,6 @@ public class MainActivity extends AppCompatActivity implements IActivity{
         Toast.makeText(this, "初始化数据", Toast.LENGTH_SHORT).show();
     }
 
-    private AppCompatEditText acEtOne,acEtTwo;
-    private void loadView(){
-        ViewStub viewStub=findViewById(R.id.view_stub);
-        if (viewStub != null) {
-            View view=viewStub.inflate();
-            acEtOne=view.findViewById(R.id.acEt_one);
-            acEtTwo=view.findViewById(R.id.acEt_two);
-            Toast.makeText(this, "加载ViewStub", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 
     public void ClickListeners(View view) {
         switch (view.getId()) {
@@ -40,4 +30,15 @@ public class MainActivity extends AppCompatActivity implements IActivity{
             }
         }
     }
+
+    private void loadView(){
+        ViewStub viewStub=findViewById(R.id.view_stub);
+        if (viewStub != null) {
+            View view=viewStub.inflate();
+            view.findViewById(R.id.acBtn_one).setOnClickListener(v -> finish());
+            AppCompatEditText acEtTwo=view.findViewById(R.id.acEt_two);
+            Toast.makeText(this, "加载ViewStub", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
